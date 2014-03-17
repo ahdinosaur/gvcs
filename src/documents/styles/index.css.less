@@ -1,4 +1,6 @@
 @import '../../../node_modules/semantic/src/elements/icon.less';
+@import '../../../node_modules/semantic/src/elements/button.less';
+@import '../../../node_modules/semantic/src/collections/menu.less';
 @import '../../../node_modules/semantic/src/collections/grid.less';
 @import '../../../node_modules/semantic/src/modules/accordion.less';
 
@@ -15,14 +17,29 @@ html, body {
   height: 100%;
   font-family: Times;
   color: @black;
+
+  background: @white;
+  background: -webkit-linear-gradient(to left, #333, #aaa, #333);
+  background: -moz-linear-gradient(to left, #333, #aaa, #333);
+  background: -ms-linear-gradient(to left, #333, #aaa, #333);
+  background: -o-linear-gradient(to left, #333, #aaa, #333);
+  background: linear-gradient(to left, #333, #aaa, #333);
+  background: -webkit-radial-gradient(circle, #aaa, #333);
+  background: -moz-radial-gradient(circle, #aaa, #333);
+  background: -o-radial-gradient(circle, #aaa, #333);
+  background: radial-gradient(circle, #aaa, #333);
 }
 
 body > .index.page {
   z-index: 1;
   text-align: center;
-  width: 100%;
-  top: 10%;
-  position: absolute;
+  min-width: 100%;
+  top: 20px;
+  position: relative;
+}
+
+body > .index.page > nav {
+  display: inline-block;
 }
 
 body > .index.page > header {
@@ -78,6 +95,7 @@ body > .index.page > main {
 
   .accordion {
     margin: 0 auto;
+    font-size: 1.3rem;
   }
 }
 

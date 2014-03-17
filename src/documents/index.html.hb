@@ -2,15 +2,20 @@
 layout: "default"
 scripts: ["/scripts/bundle.js"]
 ---
-<nav>
-  <ul>
-  </ul>
-</nav>
 <div class="ui index page grid">
   <header>
+    <img src="images/logo.jpg" />
     <h1>{{ site.title }}</h1>
     <p>{{ site.description }}</p>
   </header>
+  <nav class="ui menu">
+    <div class="item">
+      <div class="ui teal button">Sign up</div>
+    </div>
+    <div class="item">
+      <div class="ui button">Log-in</div>
+    </div>
+  </nav>
   <main>
     <div class="ui accordion">
       <div class="title">
