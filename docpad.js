@@ -5,8 +5,9 @@ require('longjohn');
 module.exports = {
   templateData: {
     site: {
-      title: "gvcs",
-      description: "",
+      title: "Lumen Global Value Compass",
+      description: "a system for monthly commentary on global themes, country summaries, and asset allocation.",
+      styles: ["/styles/index.css"],
     },
   },
   detectEncoding: true,
@@ -26,6 +27,10 @@ module.exports = {
         arguments: ['-t', 'uglifyify'],
         entry: 'scripts/index.js',
         out: 'scripts/bundle.js',
+      }, {
+        arguments: ['-t', 'uglifyify'],
+        entry: 'scripts/compass.js',
+        out: 'scripts/compassbundle.js',
       }],
       environments: {
         development: {
@@ -33,6 +38,10 @@ module.exports = {
             arguments: ['-d'],
             entry: 'scripts/index.js',
             out: 'scripts/bundle.js',
+          }, {
+            arguments: ['-d'],
+            entry: 'scripts/compass.js',
+            out: 'scripts/compassbundle.js',
           }],
         },
       },

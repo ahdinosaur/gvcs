@@ -1,0 +1,1 @@
+The biggest impact by far on value/price of any asset is the discount rate (also known as the IRR or Cost of Capital) and is the most crucial and difficult variable to determine… what we call “ The Holy Grail of Finance”

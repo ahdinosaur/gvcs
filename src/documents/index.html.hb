@@ -1,6 +1,12 @@
 ---
 layout: "default"
+scripts: ["/scripts/bundle.js"]
 ---
-<main>
-  <h2></h2>
-</main>
+<nav>
+  <ul>
+  </ul>
+</nav>
+<header class="index">
+  <h1>{{ site.title }}</h1>
+  <p>{{ site.description }}</p>
+</header>

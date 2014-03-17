@@ -3,63 +3,51 @@ var topojson = require('topojson');
 
 var globe = require('./globe');
 
-var width = 960;
-var height = 500;
-
 var projection = d3.geo.orthographic()
-  .scale(248)
   .clipAngle(90);
 
-var canvas = d3.select("main").append("canvas")
-  .attr("width", width)
-  .attr("height", height);
+var t0 = Date.now();
 
-var c = canvas.node().getContext("2d");
+var canvas = d3.select("body").insert("canvas", ":first-child")
+  .attr("class", "background");
+
+var updateWindow = function () {
+  var w = window;
+  var d = document;
+  var e = document.documentElement;
+  var g = d.getElementsByTagName('body')[0];
+  var x = w.innerWidth || e.clientWidth || g.clientWidth;
+  var y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+  var cx = (x / 2);
+  var cy = (y / 2);
+  var r = Math.min(cx, cy);
+  
+  canvas.attr("width", r * 2).attr("height", r * 2);
+  canvas.attr("style", "left: " + ((x / 2 ) - r) + "px;");
+  projection.translate([r, r]);
+  projection.scale(r);
+};
+window.onresize = updateWindow;
+updateWindow();
 
 var path = d3.geo.path()
-  .projection(projection)
-  .context(c);
+  .projection(projection);
 
-var title = d3.select("h2");
+var velocity = 0.002;
 
-globe(function (land, countries, borders) {
+globe(function (globe, land, countries, borders) {
 
-  var select = d3.select("main").append("select");
+  d3.timer(function () {
+    var t = Date.now() - t0;
 
-  var options = select.selectAll("option")
-    .data(countries)
-    .enter()
-    .append("option");
+    var c = canvas.node().getContext("2d");
+    var p = path.context(c);
 
-  options
-    .text(function (d) { return d.name });
-
-  var transition = function transition() {
-
-    if (!this.selectedIndex) { return; }
-
-    var selection = countries[this.selectedIndex];
-
-    d3.transition()
-        .duration(1250)
-        .each("start", function() {
-          title.text(selection.name);
-        })
-        .tween("rotate", function() {
-          var p = d3.geo.centroid(selection),
-              r = d3.interpolate(projection.rotate(), [-p[0], -p[1]]);
-          return function(t) {
-            projection.rotate(r(t));
-            c.clearRect(0, 0, width, height);
-            c.fillStyle = "#bbb", c.beginPath(), path(land), c.fill();
-            c.fillStyle = "#f00", c.beginPath(), path(selection), c.fill();
-            c.strokeStyle = "#fff", c.lineWidth = .5, c.beginPath(), path(borders), c.stroke();
-            c.strokeStyle = "#000", c.lineWidth = 2, c.beginPath(), path(globe), c.stroke();
-          };
-        })
-      .transition()
-        .each("end", transition);
-  };
-
-  select.on("change", transition);
+    var angle = velocity * t;
+    projection.rotate([angle, 0, 0]);
+    c.clearRect(0, 0, canvas.attr('width'), canvas.attr('height'));
+    c.fillStyle = "#999", c.beginPath(), p(land), c.fill();
+    c.strokeStyle = "#fff", c.lineWidth = .5, c.beginPath(), p(borders), c.stroke();
+    c.strokeStyle = "#666", c.lineWidth = 2, c.beginPath(), p(globe), c.stroke();
+  });
 });

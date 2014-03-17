@@ -23,7 +23,8 @@
     "docpad-plugin-ejs": "git://github.com/perpetual-motion/docpad-plugin-ejs",
     "topojson": "^1.4.9",
     "d3": "^3.4.3",
-    "queue-async": "^1.0.7"
+    "queue-async": "^1.0.7",
+    "jquery": "^2.1.0"
   },
   "main": "node_modules/.bin/docpad-server",
   "scripts": {

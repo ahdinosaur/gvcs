@@ -23,6 +23,6 @@ module.exports = function (process) {
       return a.name.localeCompare(b.name);
     });
   
-    process(land, countries, borders)
+    process(globe, land, countries, borders)
   }
 };
