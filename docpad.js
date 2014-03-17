@@ -5,8 +5,8 @@ require('longjohn');
 module.exports = {
   templateData: {
     site: {
-      title: "yourproject is",
-      description: "a really awesome idea!",
+      title: "gvcs",
+      description: "",
     },
   },
   detectEncoding: true,

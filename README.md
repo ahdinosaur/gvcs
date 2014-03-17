@@ -1,13 +1,13 @@
-# yourproject.is
+# gvcs
 
-website for [yourproject](http://yourproject.is) built using [DocPad](http://docpad.org).
+website for [gvcs](http:/ahdinosaur.github.io/gvcs) built using [DocPad](http://docpad.org).
 
 ## how to
 
 ### install
 
 ```
-git clone https://github.com/yourname/yourproject.is
+git clone https://github.com/ahdinosaur/gvcs
 npm install
 ```
 
