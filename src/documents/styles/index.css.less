@@ -1,7 +1,6 @@
-@import '../../../node_modules/font-awesome/less/font-awesome.less';
-@fa-font-path:  "../fonts";
-
 @import '../../../node_modules/semantic/src/elements/icon.less';
+@import '../../../node_modules/semantic/src/collections/grid.less';
+@import '../../../node_modules/semantic/src/modules/accordion.less';
 
 @import './colors.less';
 
@@ -18,13 +17,17 @@ html, body {
   color: @black;
 }
 
-body > header.index {
+body > .index.page {
   z-index: 1;
   text-align: center;
   width: 100%;
-  bottom: 15%;
+  top: 10%;
   position: absolute;
+}
 
+body > .index.page > header {
+
+  width: 100%;
   background: @white;
   background: rgba(255, 255, 255, 0.7);
 
@@ -68,6 +71,13 @@ body > header.index {
 
   a {
     text-decoration: none;
+  }
+}
+body > .index.page > main {
+  margin-top: 10px;
+
+  .accordion {
+    margin: 0 auto;
   }
 }
 

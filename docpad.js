@@ -47,9 +47,6 @@ module.exports = {
       },
     },
     raw: {
-      'font-awesome': {
-        command: ['rsync', '-r', 'node_modules/font-awesome/fonts/', 'out/fonts'],
-      },
       semantic: {
         command: ['rsync', '-r', 'node_modules/semantic/src/fonts/', 'out/fonts'],
       },

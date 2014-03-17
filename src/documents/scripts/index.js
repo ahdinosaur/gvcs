@@ -1,5 +1,11 @@
 var d3 = require('d3');
 var topojson = require('topojson');
+var $ = jQuery = require('jquery');
+require('semantic/src/modules/accordion');
+
+$(function () {
+  $('.ui.accordion').accordion();
+});
 
 var globe = require('./globe');
 
