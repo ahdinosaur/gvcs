@@ -1,46 +1,28 @@
 var d3 = require('d3');
 var topojson = require('topojson');
-var queue = require('queue-async');
 
-var width = 960,
-    height = 500;
+var globe = require('./globe');
+
+var width = 960;
+var height = 500;
 
 var projection = d3.geo.orthographic()
-    .scale(248)
-    .clipAngle(90);
+  .scale(248)
+  .clipAngle(90);
 
 var canvas = d3.select("main").append("canvas")
-    .attr("width", width)
-    .attr("height", height);
+  .attr("width", width)
+  .attr("height", height);
 
 var c = canvas.node().getContext("2d");
 
 var path = d3.geo.path()
-    .projection(projection)
-    .context(c);
+  .projection(projection)
+  .context(c);
 
 var title = d3.select("h2");
 
-queue()
-    .defer(d3.json, "data/world-110m.json")
-    .defer(d3.tsv, "data/world-country-names.tsv")
-    .await(ready);
-
-function ready(error, world, names) {
-  var globe = {type: "Sphere"},
-      land = topojson.feature(world, world.objects.land),
-      countries = topojson.feature(world, world.objects.countries).features,
-      borders = topojson.mesh(world, world.objects.countries, function(a, b) { return a !== b; }),
-      i = -1,
-      n = countries.length;
-
-  countries = countries.filter(function(d) {
-    return names.some(function(n) {
-      if (d.id == n.id) return d.name = n.name;
-    });
-  }).sort(function(a, b) {
-    return a.name.localeCompare(b.name);
-  });
+globe(function (land, countries, borders) {
 
   var select = d3.select("main").append("select");
 
@@ -57,8 +39,6 @@ function ready(error, world, names) {
     if (!this.selectedIndex) { return; }
 
     var selection = countries[this.selectedIndex];
-
-    console.log(selection);
 
     d3.transition()
         .duration(1250)
@@ -82,4 +62,4 @@ function ready(error, world, names) {
   };
 
   select.on("change", transition);
-}
+});
