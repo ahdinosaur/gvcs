@@ -30,7 +30,7 @@
   "scripts": {
     "start": "node .",
     "develop": "docpad run",
-    "deploy": "git remote add origin git@github.com:ahdinosaur/ahdinosaur.git; docpad deploy-ghpages --env static"
+    "deploy": "docpad deploy-ghpages --env static"
   },
   "devDependencies": {
     "docpad-plugin-partials": "~2.8.1",
