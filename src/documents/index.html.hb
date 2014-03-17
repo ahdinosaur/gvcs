@@ -1,6 +1,6 @@
 ---
 layout: "default"
-scripts: ["/scripts/bundle.js"]
+scripts: ["scripts/bundle.js"]
 ---
 <div class="ui index page grid">
   <header>

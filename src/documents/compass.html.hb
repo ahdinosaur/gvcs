@@ -1,6 +1,6 @@
 ---
 layout: "default"
-scripts: ["/scripts/compassbundle.js"]
+scripts: ["scripts/compassbundle.js"]
 ---
 <main>
   <h2></h2>

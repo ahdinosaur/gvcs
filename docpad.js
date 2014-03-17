@@ -7,7 +7,7 @@ module.exports = {
     site: {
       title: "Lumen Global Value Compass",
       description: "a system for monthly commentary on global themes, country summaries, and asset allocation.",
-      styles: ["/styles/index.css"],
+      styles: ["styles/index.css"],
     },
   },
   detectEncoding: true,
