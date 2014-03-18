@@ -1,10 +1,15 @@
 var d3 = require('d3');
 var topojson = require('topojson');
 var $ = jQuery = require('jquery');
+require('./vendor/jquery-easing');
 require('semantic/src/modules/accordion');
+require('semantic/src/modules/dimmer');
+require('semantic/src/modules/modal');
 
 $(function () {
   $('.ui.accordion').accordion();
+  $('.ui.login.modal').modal('attach events', '.login.button', 'show');
+  $('.ui.signup.modal').modal('attach events', '.signup.button', 'show');
 });
 
 var globe = require('./globe');
