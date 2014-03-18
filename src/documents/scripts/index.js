@@ -52,8 +52,9 @@ globe(function (globe, land, countries, borders) {
     var angle = velocity * t;
     projection.rotate([angle, 0, 0]);
     c.clearRect(0, 0, canvas.attr('width'), canvas.attr('height'));
-    c.fillStyle = "#5F9BBE", c.lineWidth = 2, c.beginPath(), p(globe), c.fill();
-    c.fillStyle = "#a38960", c.beginPath(), p(land), c.fill();
+    c.fillStyle = "#d4ffff", c.lineWidth = 2, c.beginPath(), p(globe), c.fill();
+    c.fillStyle = "#d4c4aa", c.beginPath(), p(land), c.fill();
     c.strokeStyle = "#fff", c.lineWidth = .5, c.beginPath(), p(borders), c.stroke();
+    c.strokeStyle = "#666", c.lineWidth = 2, c.beginPath(), p(globe), c.stroke();
   });
 });

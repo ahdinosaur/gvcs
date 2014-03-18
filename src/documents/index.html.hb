@@ -6,7 +6,6 @@ scripts: ["scripts/bundle.js"]
   <header>
     <img src="images/logo.jpg" />
     <h1>{{ site.title }}</h1>
-    <p>{{ site.description }}</p>
   </header>
   <nav class="ui menu">
     <div class="item">

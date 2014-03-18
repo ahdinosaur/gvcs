@@ -19,15 +19,15 @@ html, body {
   color: @black;
 
   background: @white;
-  background: -webkit-linear-gradient(to left, #333, #aaa, #333);
-  background: -moz-linear-gradient(to left, #333, #aaa, #333);
-  background: -ms-linear-gradient(to left, #333, #aaa, #333);
-  background: -o-linear-gradient(to left, #333, #aaa, #333);
-  background: linear-gradient(to left, #333, #aaa, #333);
-  background: -webkit-radial-gradient(circle, #aaa, #333);
-  background: -moz-radial-gradient(circle, #aaa, #333);
-  background: -o-radial-gradient(circle, #aaa, #333);
-  background: radial-gradient(circle, #aaa, #333);
+  background: -webkit-linear-gradient(to left, #444, #fff, #444);
+  background: -moz-linear-gradient(to left, #444, #fff, #444);
+  background: -ms-linear-gradient(to left, #444, #fff, #444);
+  background: -o-linear-gradient(to left, #444, #fff, #444);
+  background: linear-gradient(to left, #444, #fff, #444);
+  background: -webkit-radial-gradient(circle, #fff, #444);
+  background: -moz-radial-gradient(circle, #fff, #444);
+  background: -o-radial-gradient(circle, #fff, #444);
+  background: radial-gradient(circle, #fff, #444);
 }
 
 body > .index.page {
@@ -45,8 +45,6 @@ body > .index.page > nav {
 body > .index.page > header {
 
   width: 100%;
-  background: @white;
-  background: rgba(255, 255, 255, 0.7);
 
   h1 {
     margin: 0;
@@ -67,9 +65,10 @@ body > .index.page > header {
   }
 
   p {
-    margin: 0;    
+    margin: 0 5%;
 
-    color: rgba(0, 0, 0, 0.75);
+    color: @black;
+    font-weight: bold;
 
     @media @tiny {
       display: inline-block;
@@ -96,6 +95,15 @@ body > .index.page > main {
   .accordion {
     margin: 0 auto;
     font-size: 1.3rem;
+    width: 75%;
+
+    @media @medium {
+      width: 85%;
+    }
+
+    @media @tiny, @small {
+      width: 100%;
+    }
   }
 }
 
