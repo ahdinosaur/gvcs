@@ -44,7 +44,7 @@ scripts: ["scripts/bundle.js"]
 <div class="ui large signup modal">
   <i class="close icon"></i>
   <div class="header">
-    Sign up
+    Sign up for {{site.title}}
   </div>
   <div class="content">
     <div class="ui form">
@@ -131,7 +131,7 @@ scripts: ["scripts/bundle.js"]
 <div class="ui large login modal">
   <i class="close icon"></i>
   <div class="header">
-    Log-in
+    Log-in to {{site.title}}
   </div>
   <div class="content">
     <div class="ui form">
