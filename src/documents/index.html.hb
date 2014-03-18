@@ -12,7 +12,7 @@ scripts: ["scripts/bundle.js"]
       <div class="ui teal button">Sign up</div>
     </div>
     <div class="item">
-      <div class="ui button">Log-in</div>
+      <div class="ui green button">Log-in</div>
     </div>
   </nav>
   <main>
