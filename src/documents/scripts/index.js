@@ -9,7 +9,24 @@ require('semantic/src/modules/modal');
 $(function () {
   $('.ui.accordion').accordion();
   $('.ui.login.modal').modal('attach events', '.login.button', 'show');
+  $('.ui.login.modal .actions .submit').click(function () {
+    window.location.href = "./compass.html";
+  });
   $('.ui.signup.modal').modal('attach events', '.signup.button', 'show');
+  $('.ui.signup.modal .actions .submit').click(function () {
+    window.location.href = "./compass.html";
+  });
+  $('body').attr("style",
+    "background: -webkit-linear-gradient(to left, #444, #fff, #444); " +
+    "background: -moz-linear-gradient(to left, #444, #fff, #444); " +
+    "background: -ms-linear-gradient(to left, #444, #fff, #444); " +
+    "background: -o-linear-gradient(to left, #444, #fff, #444); " +
+    "background: linear-gradient(to left, #444, #fff, #444); " +
+    "background: -webkit-radial-gradient(circle, #fff, #444); " +
+    "background: -moz-radial-gradient(circle, #fff, #444); " +
+    "background: -o-radial-gradient(circle, #fff, #444); " +
+    "background: radial-gradient(circle, #fff, #444);"
+  );
 });
 
 var globe = require('./globe');
